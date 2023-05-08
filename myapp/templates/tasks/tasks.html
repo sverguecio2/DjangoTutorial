@@ -2,39 +2,69 @@
 
 {% block content %}
 
-<h1>Welcome to Task</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit neque dolores? Voluptas facere animi soluta
-    odio at non, laudantium earum sapiente fugit quo aliquid quas, repellendus nostrum minus quam veritatis
-    praesentium pariatur velit consectetur error perspiciatis nam consequatur voluptatibus recusandae. Doloremque
-    similique accusamus exercitationem asperiores nemo provident repellendus, ipsam id, aperiam saepe quis
-    architecto dolores culpa illo nesciunt eos. Non repudiandae eos repellat adipisci labore ullam, rerum pariatur
-    vero velit rem, nesciunt dicta consequatur esse sapiente. Dignissimos explicabo, similique excepturi repellendus
-    ipsum incidunt reiciendis fugiat porro quae. A culpa ea fuga dolores blanditiis, accusamus veniam ex velit ipsa
-    minima.</p>
+<h1>Bienvenido a la pagina de tareas</h1>
+<p>Esta es la pagina de tareas</p>
 
-{{ tasks }}
 
-{% for task in tasks %}
+{# note: commented-out template because we no longer use this
+    {% for user in users %}
+        ...
+    {% endfor %}
+#}
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">{{ task.title }}</h5>
 
-        {% if task.done == True %}
-        <div class="alert alert-success" role="alert">
-            Tarea completada
+{% for task in tasks %} 
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+        
+                {% if task.done == True %}
+                <div class="alert alert-success" role="alert">
+                    Tarea completada
+                </div>
+                {% else %}
+                <div class="alert alert-danger" role="alert">
+                    Tarea incompleta
+                </div>
+                {% endif %}
+                <p class="card-text">{{ task.description }}</p>
+                <p class="card-text">{{ task.project }}</p>
+                <a href="#" class="btn btn-danger">delete</a>
+                <a href="#" class="btn btn-warning">update</a>
+            </div>
         </div>
-        {% else %}
-        <div class="alert alert-danger" role="alert">
-            Tarea incompleta
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+        
+                {% if task.done == True %}
+                <div class="alert alert-success" role="alert">
+                    Tarea completada
+                </div>
+                {% else %}
+                <div class="alert alert-danger" role="alert">
+                    Tarea incompleta
+                </div>
+                {% endif %}
+                <p class="card-text">{{ task.description }}</p>
+                <p class="card-text">{{ task.project }}</p>
+                <a href="#" class="btn btn-danger">delete</a>
+                <a href="#" class="btn btn-warning">update</a>
+            </div>
         </div>
-        {% endif %}
-        <p class="card-text">{{ task.description }}</p>
-        <p class="card-text">{{ task.project }}</p>
-        <a href="#" class="btn btn-danger">delete</a>
-        <a href="#" class="btn btn-warning">update</a>
     </div>
 </div>
+
+
+
 {% endfor %}
 
 
