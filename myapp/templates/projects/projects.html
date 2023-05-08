@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<h1>Welcome to Project</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit neque dolores? Voluptas facere animi soluta
+    odio at non, laudantium earum sapiente fugit quo aliquid quas, repellendus nostrum minus quam veritatis
+    praesentium pariatur velit consectetur error perspiciatis nam consequatur voluptatibus recusandae. Doloremque
+    similique accusamus exercitationem asperiores nemo provident repellendus, ipsam id, aperiam saepe quis
+    architecto dolores culpa illo nesciunt eos. Non repudiandae eos repellat adipisci labore ullam, rerum pariatur
+    vero velit rem, nesciunt dicta consequatur esse sapiente. Dignissimos explicabo, similique excepturi repellendus
+    ipsum incidunt reiciendis fugiat porro quae. A culpa ea fuga dolores blanditiis, accusamus veniam ex velit ipsa
+    minima.</p>
+
+{{ projects }}
+
+{% for project in projects %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ project.name }}</h5>
+
+
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
